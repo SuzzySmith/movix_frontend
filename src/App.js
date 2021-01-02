@@ -40,12 +40,10 @@ if(isLoggedIn){
       </Route>
       <Route path="/wishlist" exact>
         <div className="display-4 flex">Whishlist is coming</div>
-        {/* <Wishlist/> */}
       </Route>
       <Route path="/favourite" exact>
       <div  className="display-4 flex">Favourite is coming</div>
 
-        {/* <Favourite/> */}
       </Route> 
       <Redirect to="/all" /> 
      </React.Fragment>  
