@@ -5,6 +5,7 @@ import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
 import { AuthContext } from "../context/auth-context"
 import swal from "sweetalert"
+import Logo from "../images/movix.png";
 
 
 const Navigation = () => {
@@ -29,7 +30,7 @@ const Navigation = () => {
         <Navbar  expand="lg" className=" bg-gradient-primary text-white mb-3 ">
         <Navbar.Brand  className=" text-white  pr-5 ">
         MOVIX 
-      <img src="../images/movix.png" alt="" width="30" height="24"/>
+      <img src={Logo} alt="Logo" width="50" height="44"/>
         </Navbar.Brand> 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className=" text-white  " />
 

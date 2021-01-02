@@ -39,7 +39,7 @@ if(isLoggedIn){
         <Allmovies />
       </Route>
       <Route path="/wishlist" exact>
-        <div className="display-4 flex">Whishlist is coming</div>
+        <div className="display-4 flex">Wishlist is coming</div>
         {/* <Wishlist/> */}
       </Route>
       <Route path="/favourite" exact>
