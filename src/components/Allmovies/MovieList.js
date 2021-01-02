@@ -5,6 +5,7 @@ import Spinner from 'react-bootstrap/Spinner'
 
 const MovieList = props => {
    const receivedItems = props.items
+   console.log(receivedItems)
     if(receivedItems.length === 0){
 
         return(

@@ -11,19 +11,20 @@ const [noContact, setNoContact] = useState();
 
 const getMovies = async () => {
 
-  const uid= localStorage.getItem('currentUserId')
+  //const uid= localStorage.getItem('currentUserId')
+let responseData;
 
  try { 
-   const responseData = await axios.get('http://localhost:4000/api/customers/'+uid)
+    responseData = await axios.get('http://localhost:4000/movies/')
                         .then(response => {
                           //console.log(response)
                                 if(response.data.no_contact){
                                     setNoContact(response.data.no_contact)
                                 }else{
-                                  if(response.data.customers === false){
+                                  if(response.data === false){
                                     swal.fire("Contacts list database could not be reached",)
                                 }else{
-                                        setSend(response.data.customers) 
+                                        setSend(response.data) 
                                     }
                                 }
                                   
