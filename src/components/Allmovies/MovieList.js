@@ -1,11 +1,15 @@
 import React from "react"
 import MovieTile from "./MovieTile"
-import Accordion from 'react-bootstrap/Accordion'
 import Spinner from 'react-bootstrap/Spinner'
 
 const MovieList = props => {
-   const receivedItems = props.items
-   console.log(receivedItems)
+const receivedItems = [props.items]
+const  movieList = receivedItems[0].Search
+
+console.log(typeof(movieList))
+console.log((movieList))
+console.log(typeof(receivedItems))
+
     if(receivedItems.length === 0){
 
         return(
@@ -15,23 +19,25 @@ const MovieList = props => {
         );
     }
 return(
-    <>
-    {receivedItems.map(customer =>(
-    <Accordion  >
-        <MovieTile 
-            key={customer.id}
-            id={customer._id}
-            image={customer.image}
-            name={customer.name}
-            mobile={customer.mobile}
-            city={customer.city}
-            address={customer.address}
-            gps={customer.gps}
-            email={customer.email}
+    <>        
+{/* <div className="container"> */}
+
+    {/*Content Row*/}  
+
+  {movieList.map(movie =>( 
+       <MovieTile 
+            key={movie.totalResults}
+            title={movie.Title}
+            year={movie.Year}
+            poster={movie.Poster}
+            id={movie.imdbID}
              />
-    </Accordion>
     )
     )}
+
+
+
+        
     </>
 );
 
