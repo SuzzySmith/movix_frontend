@@ -9,7 +9,7 @@ const Allmovies = () => {
 const [send, setSend] = useState([]);
 const [noContact, setNoContact] = useState();
 
-const getMovies = async () => {
+const getMovies = async (req) => {
 
   //const uid= localStorage.getItem('currentUserId')
 //let responseData;
@@ -17,7 +17,7 @@ const getMovies = async () => {
  try { 
      await axios.get('http://localhost:4000/movies/')
                         .then(response => {
-                         // console.log(response.data.Response)
+                         console.log(req)
                                 if(!response.data.Response){
                                     setNoContact(response.data.Response)
                                 }else{
@@ -72,11 +72,12 @@ return (<>
           </div>
           <div className="card-body pl-3" >
           <ul className="list-group">
-              <li className="list-group-item">African Movies</li>
-              <li className="list-group-item">Ghanaian Movies</li>
-              <li className="list-group-item">European Movies</li>
-              <li className="list-group-item">Hindi Movies</li>
-              <li className="list-group-item">American Fiction</li>
+              <li className="active btn list-group-item" id='movies'>All Movies</li>
+              <li className="btn list-group-item" id='africa'>African Movies</li>
+              <li className="btn list-group-item" id='ghana'>Ghanaian Movies</li>
+              <li className="btn list-group-item" id='europe'>European Movies</li>
+              <li className="btn list-group-item" id='india'>Hindi Movies</li>
+              <li className="btn list-group-item" id='american'>American Fiction</li>
           </ul>
           </div>
           </div>
