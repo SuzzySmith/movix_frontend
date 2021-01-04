@@ -71,7 +71,13 @@ return (<>
             <h6 className="m-0 font-weight-bold text-primary">Categories</h6>
           </div>
           <div className="card-body pl-3" >
-              
+          <ul className="list-group">
+              <li className="list-group-item">African Movies</li>
+              <li className="list-group-item">Ghanaian Movies</li>
+              <li className="list-group-item">European Movies</li>
+              <li className="list-group-item">Hindi Movies</li>
+              <li className="list-group-item">American Fiction</li>
+          </ul>
           </div>
           </div>
 

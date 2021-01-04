@@ -23,7 +23,7 @@ return(
 {/* <div className="container"> */}
 
     {/*Content Row*/}  
-
+  <div className="card-group">
   {movieList.map(movie =>( 
        <MovieTile 
             key={movie.totalResults}
@@ -35,6 +35,9 @@ return(
     )
     )}
 
+  </div>
+
+  
 
 
         
