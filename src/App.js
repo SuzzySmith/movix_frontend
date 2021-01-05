@@ -43,7 +43,7 @@ if(isLoggedIn){
       </Route>
       <Route path="/favourite" exact>
       <div  className="display-4 flex">Favourite is coming</div>
-
+      
       </Route> 
       <Redirect to="/all" /> 
      </React.Fragment>  
@@ -61,8 +61,12 @@ if(isLoggedIn){
       <Route path="/all" exact >
        <Allmovies />
      </Route>
+     {/* <Route exactpath="/movie/movieId" component={(Tile, null)} >
+     </Route> */}
      <Redirect to="/all" /> 
-    </React.Fragment>  
+     
+    </React.Fragment> 
+     
   );
 }
         

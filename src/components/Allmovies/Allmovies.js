@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {  faSyncAlt } from "@fortawesome/free-solid-svg-icons"
-import MovieList from "./MovieList"
-import swal from "sweetalert2"
-import axios from "axios"
+import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {  faSyncAlt } from "@fortawesome/free-solid-svg-icons";
+import MovieList from "./MovieList";
+import swal from "sweetalert2";
+import axios from "axios";
 
 const Allmovies = () => {
 const [send, setSend] = useState([]);
@@ -73,6 +73,9 @@ return (
         <div className="card shadow mb-4 col-lg-9 py-0 px-0">
           <div className="card-header py-3 d-flex flex-row  justify-content-between ">
             <h6 className="m-0 font-weight-bold text-primary">Movies</h6>
+
+                    
+           
           </div>
           <div className="card-body pl-3" >
               {noContact ? "<center>You have no contact</center>" : <MovieList  items={send}/>}
