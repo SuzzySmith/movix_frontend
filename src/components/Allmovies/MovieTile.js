@@ -1,13 +1,12 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState }from "react";
-import {Link} from "react-router-dom";
-import Accordion from 'react-bootstrap/Accordion';
-import Card from 'react-bootstrap/Card';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Button from 'react-bootstrap/Button';
+// import {Link} from "react-router-dom";
+// import Accordion from 'react-bootstrap/Accordion';
+// import Card from 'react-bootstrap/Card';
+// import ButtonGroup from 'react-bootstrap/ButtonGroup';
+// import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSms, faPhone, faEdit, faTrashAlt, faHeart, faCartPlus } from "@fortawesome/free-solid-svg-icons";
-import swal from 'sweetalert2'
+import { faHeart, faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 
 const MovieTile = props => {
