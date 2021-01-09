@@ -27,13 +27,12 @@ const getMovies = async (req) => {
                                         console.log(response.data) 
                                     }
                                 }
-                                  
-                                  }); 
+                               }); 
 
- }catch(error){
-  
- }
-};
+                              }catch(error){
+                                
+                              }
+                              };
 
 useEffect(() => {
     getMovies()
