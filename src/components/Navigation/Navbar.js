@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { faSignOutAlt, faStar, faHeart, faFilm } from "@fortawesome/free-solid-svg-icons";
+import { faSignOutAlt, faStar, faHeart, faFilm,faSignInAlt } from "@fortawesome/free-solid-svg-icons";
 import NavItems from "./NavItems"
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
@@ -37,7 +37,7 @@ const Navigation = () => {
         <Navbar.Collapse className=" text-white  " id="responsive-navbar-nav" >
             <Nav className="mr-auto text-white">
                 {/* <Nav.Link className=" text-white pr-3 "><NavItems icon={faTachometerAlt} name="Dashboard" link="/dashboard"  /></Nav.Link> */}
-                {/* <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {/* <utton type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
              All Movies
                   </button>
                 <div class="dropdown-menu">
@@ -57,6 +57,10 @@ const Navigation = () => {
 
                 <Nav.Link className=" text-white pr-3 ">
                   <NavItems icon={faHeart} name="Wishlist" link="/wishlist"  />
+                </Nav.Link>
+
+                <Nav.Link className=" text-white pr-3 " onClick={handleLogout}>
+                  <NavItems icon={faSignInAlt} name="Login" link="/Login"  />
                 </Nav.Link>
 
                 <Nav.Link className=" text-white pr-3 " onClick={handleLogout}>

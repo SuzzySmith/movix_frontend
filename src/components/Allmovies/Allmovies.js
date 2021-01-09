@@ -9,25 +9,26 @@ const Allmovies = () => {
 const [send, setSend] = useState([]);
 const [noContact, setNoContact] = useState();
 
-const getMovies = async () => {
+const getMovies = async (req) => {
 
-  const uid= localStorage.getItem('currentUserId')
+  //const uid= localStorage.getItem('currentUserId')
+//let responseData;
 
  try { 
-   const responseData = await axios.get('http://localhost:4000/api/customers/'+uid)
+     await axios.get('http://localhost:4000/movies/')
                         .then(response => {
-                          //console.log(response)
-                                if(response.data.no_contact){
-                                    setNoContact(response.data.no_contact)
+                               if(!response.data.Response){
+                                    setNoContact(response.data.Response)
                                 }else{
-                                  if(response.data.customers === false){
+                                  if(response.data === false){
                                     swal.fire("Contacts list database could not be reached",)
                                 }else{
-                                        setSend(response.data.customers) 
+                                        setSend(response.data) 
+                                        console.log(response.data) 
                                     }
                                 }
                                   
-                                  })
+                                  }); 
 
  }catch(error){
   
@@ -38,7 +39,7 @@ useEffect(() => {
     getMovies()
 }, [])
 
-return (
+return (<>
         <div className="container-fluid">
 
         <h1 className="h3 mb-2 text-gray-800">All Movies</h1>
@@ -54,21 +55,32 @@ return (
                   </span>
                   <span className="text">Refresh List</span>
                 </div>
-                   </div> 
-          </div>
+            </div> 
+            </div>
+        </div>
 
 
-        {/*Content Row*/}
+        <div className="container-fluid">
+
+      {/*Content Row*/}
        <div className="row">
+
 
        <div className="card  mb-4 col-lg-3 py-0 px-0  col-md-3 col-sd-12 mb-3">
        <div className="card-header py-3 d-flex flex-row  justify-content-between ">
             <h6 className="m-0 font-weight-bold text-primary">Categories</h6>
           </div>
           <div className="card-body pl-3" >
-              
+          <ul className="list-group">
+              <li className="active btn list-group-item" id='movies'>All Movies</li>
+              <li className="btn list-group-item" id='africa'>African Movies</li>
+              <li className="btn list-group-item" id='ghana'>Ghanaian Movies</li>
+              <li className="btn list-group-item" id='europe'>European Movies</li>
+              <li className="btn list-group-item" id='india'>Hindi Movies</li>
+              <li className="btn list-group-item" id='american'>American Fiction</li>
+          </ul>
           </div>
-        </div>
+          </div>
 
         <div className="card shadow mb-4 col-lg-9 py-0 px-0">
           <div className="card-header py-3 d-flex flex-row  justify-content-between ">
@@ -78,7 +90,7 @@ return (
            
           </div>
           <div className="card-body pl-3" >
-              {noContact ? "<center>You have no contact</center>" : <MovieList  items={send}/>}
+              {noContact ? "Loading Error ERR_404" : <MovieList  items={send}/>}
               
           </div>
         </div>
@@ -86,7 +98,7 @@ return (
 
 
       </div>
-
+</>
     )
 }
 export default Allmovies;
